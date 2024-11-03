@@ -15,6 +15,13 @@ This is a template to build our NextJs project on a Docker container and have IP
 
 ### SETTINGS :wrench:
 
+First, we will access the project from the terminal and create the folder where we will store our `.mmdb` file:
+
+```bash
+cd nextjs-docker-maxmind
+mkdir /maxmind/db
+```
+
 We will need a GeoLite account on [Maxmind](https://www.maxmind.com/en/geolite2/signup). From which we will generate our license key.
 
 Once we have our GeoLite account in Maxmind, we will have to manually download our [mmdb file](https://dev.maxmind.com/geoip/docs/databases/city-and-country/) to be able to develop locally. Always placing it in the path that we select in our environment variable `MAXMIND_DB_PATH`.
