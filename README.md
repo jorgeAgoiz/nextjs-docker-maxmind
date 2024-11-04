@@ -22,11 +22,11 @@ cd nextjs-docker-maxmind
 mkdir /maxmind/db
 ```
 
+Attached to the repository we find a file `.env.example` We must clone this file and rename it to `.env`. Here we will find the environment variable that will indicate the path from which we will read our [mmdb file](https://maxmind.github.io/MaxMind-DB/), which will be the folder we just created.
+
 We will need a GeoLite account on [Maxmind](https://www.maxmind.com/en/geolite2/signup). From which we will generate our license key.
 
-Once we have our GeoLite account in Maxmind, we will have to manually download our [mmdb file](https://dev.maxmind.com/geoip/docs/databases/city-and-country/) to be able to develop locally. Always placing it in the path that we select in our environment variable `MAXMIND_DB_PATH`.
-
-Attached to the repository we find a file `.env.example` We must clone this file and rename it to `.env`. Here we find the environment variable from which we will indicate the path of our [mmdb file](https://maxmind.github.io/MaxMind-DB/).
+Once we have our GeoLite account in Maxmind, we will have to manually download our [mmdb file](https://dev.maxmind.com/geoip/docs/databases/city-and-country/) to be able to develop locally. We will place it in the folder we just created `/maxmind/db` which should be the same value we have in our environment variable `MAXMIND_DB_PATH`
 
 Example:
 
@@ -55,18 +55,22 @@ DatabaseDirectory /app/maxmind/db
 
 To set up the project in development mode locally, we only need to manually download the Maxmind binary database (mmdb) that we want to use and place it in the `/maxmind/db/` directory. 
 
-With the free tier, we have two options available:
+With Maxmind free tier, we have two options available:
 
-- GeoLite2 Country
-- GeoLite2 City
+- __GeoLite2 Country__
+- __GeoLite2 City__
 
-Once this is done, we can start our project with:
 
-```
+
+```bash
+cd nextjs-docker-maxmind
+mkdir /maxmind/db
+# Copy our `.mmdb` file into this newly created folder,
+
 npm install
 npm run dev
 ```
 
-There is a demonstration endpoint set up under the `/api/maxmind` route.
+A demo endpoint is built in at the `/api/maxmind` path.
 
 ### ANNOTATIONS :pencil2:
