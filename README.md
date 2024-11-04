@@ -60,8 +60,6 @@ With Maxmind free tier, we have two options available:
 - __GeoLite2 Country__
 - __GeoLite2 City__
 
-
-
 ```bash
 cd nextjs-docker-maxmind
 mkdir /maxmind/db
@@ -72,5 +70,3 @@ npm run dev
 ```
 
 A demo endpoint is built in at the `/api/maxmind` path.
-
-### ANNOTATIONS :pencil2:
